@@ -20,6 +20,7 @@
 		70C9957F233B6B13003F7058 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9957E233B6B13003F7058 /* Strings.swift */; };
 		70C99581233B6B1F003F7058 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99580233B6B1F003F7058 /* Utility.swift */; };
 		70C99584233B6EFA003F7058 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99583233B6EFA003F7058 /* APIManager.swift */; };
+		70C99588233B808B003F7058 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99587233B808B003F7058 /* Movie.swift */; };
 		948216777D451744E4C0FE2E /* Pods_HeadyMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		70C9957E233B6B13003F7058 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		70C99580233B6B1F003F7058 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		70C99583233B6EFA003F7058 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		70C99587233B808B003F7058 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeadyMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,7 +72,6 @@
 				3FD90940E8DAD479C65E8352 /* Pods-HeadyMovies.debug.xcconfig */,
 				46BB2B04760BFD488DB171C9 /* Pods-HeadyMovies.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -137,6 +138,7 @@
 		70C99574233B6A5D003F7058 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				70C99587233B808B003F7058 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70C9957A233B6AEC003F7058 /* Constants.swift in Sources */,
+				70C99588233B808B003F7058 /* Movie.swift in Sources */,
 				70C9957C233B6AFB003F7058 /* Extensions.swift in Sources */,
 				70C99560233B6810003F7058 /* MoviesViewController.swift in Sources */,
 				70C99584233B6EFA003F7058 /* APIManager.swift in Sources */,

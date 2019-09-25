@@ -15,7 +15,7 @@ final class APIManager {
     static let shared = APIManager()
     
     private func serverSideErrors(response: HTTPURLResponse, data: Data) -> String? {
-        if response.statusCode == 200 || response.statusCode == 201 {
+        if response.statusCode == 200 {
             return nil
         } else {
             return API_ERROR
@@ -64,14 +64,14 @@ final class APIManager {
         }
     }
     
-    final func getRequest<Decode: Decodable>(url: String, viewController: UIViewController, for responseType: Decode.Type, session: URLSession, success: @escaping (Decode) -> Void, failure: @escaping (String) -> Void) {
+    final func getRequest<Decode: Decodable>(url: String, viewController: UIViewController, for responseType: Decode.Type, success: @escaping (Decode) -> Void, failure: @escaping (String) -> Void) {
         
-        guard let url = URL(string: url) else { return }
+        guard let url = URL(string: BASE_URL + url) else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request = addHeaders(to: request)
        
-        fetchResponse(from: request, viewController: viewController, responseType: responseType, session: session, success: { (response) in
+        fetchResponse(from: request, viewController: viewController, responseType: responseType, session: URLSession(configuration: URLSessionConfiguration.default), success: { (response) in
             success(response)
         }) { (errorMsg) in
             failure(errorMsg)

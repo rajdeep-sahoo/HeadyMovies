@@ -14,6 +14,7 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getPopularMovies()
     }
 
 
