@@ -61,13 +61,95 @@ extension MoviesViewController {
         }
     }
     
-    @objc func searchBtnTapped() {
-        print("Lorem Ipsum")
+    func searchMovie(movieName: String) {
+        let url = "/search/movie?api_key=\(TMDB_API_KEY)&query=" + movieName
+        APIManager.shared.getRequest(url: url, viewController: self, for: Movies.self, success: { (response) in
+            
+            self.movies += response.results
+            self.page = response.page
+            self.totalPages = response.total_pages
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }) { (error) in
+            Utility.shared.showAlert(withMessage: error, from: self)
+        }
     }
     
     @objc func sortBtnTapped() {
         print("Lorem Ipsum")
     }
+    
+}
+
+
+// MARK: - Search Bar Delegates
+extension MoviesViewController: UISearchBarDelegate {
+    
+    @objc func searchBtnTapped() {
+        
+        let searchBar = UISearchBar(frame: .zero)
+        searchBar.showsCancelButton = true
+        searchBar.delegate = self
+        
+        let searchBarText = searchBar.value(forKey: "searchField") as? UITextField
+        searchBarText?.textColor = UIColor(rgb: TEXT_BLACK_COLOR)
+        searchBarText?.font = .systemFont(ofSize: 15)
+        
+        let searchBarPlaceholder = searchBarText!.value(forKey: "placeholderLabel") as? UILabel
+        searchBarPlaceholder?.textColor = UIColor(rgb: TEXT_GRAY_COLOR)
+        
+        searchBar.placeholder = SEARCH_BAR_PLACEHOLDER
+        
+        let attributes = [NSAttributedString.Key.foregroundColor : UIColor(rgb: TEXT_BLACK_COLOR)]
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(attributes, for: .normal)
+        
+        self.navigationItem.leftBarButtonItems = nil
+        self.navigationItem.titleView = searchBar
+        
+        searchBar.becomeFirstResponder()
+
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+        refreshAfterSearch()
+    }
+    
+    func enableSearchBarCancelButton(searchBar : UISearchBar) {
+        for view1 in searchBar.subviews {
+            for view2 in view1.subviews {
+                if view2.isKind(of: UIButton.self) {
+                    let button = view2 as! UIButton
+                    button.isEnabled = true
+                    button.isUserInteractionEnabled = true
+                }
+            }
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        enableSearchBarCancelButton(searchBar: searchBar)
+        if let searchedMovie = searchBar.text {
+            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+            self.movies.removeAll()
+            searchMovie(movieName: searchedMovie)
+        }
+        
+    }
+    
+    func refreshAfterSearch() {
+        self.navigationItem.titleView = nil
+        setupNavigationBar()
+        
+        self.movies.removeAll()
+        
+        getPopularMovies()
+    }
+    
     
 }
 
@@ -81,7 +163,13 @@ extension MoviesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! MovieCollectionViewCell
         cell.movieTitleLabel.text = self.movies[indexPath.item].title
-        Utility.shared.setImage(from: IMAGE_BASE_URL + self.movies[indexPath.item].posterPath, on: cell.moviePosterImageView)
+        
+        if let posterPath = self.movies[indexPath.item].posterPath {
+            Utility.shared.setImage(from: IMAGE_BASE_URL + posterPath, on: cell.moviePosterImageView)
+        } else if let backdropPath = self.movies[indexPath.item].backdropPath {
+            Utility.shared.setImage(from: IMAGE_BASE_URL + backdropPath, on: cell.moviePosterImageView)
+        }
+        
         return cell
     }
     
