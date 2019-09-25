@@ -54,7 +54,8 @@ final class APIManager {
                     let decodedJson = try JSONDecoder().decode(responseType.self, from: data)
                     success(decodedJson)
                     
-                } catch {
+                } catch let error {
+                    print(error)
                     failure(API_ERROR)
                 }
                 
