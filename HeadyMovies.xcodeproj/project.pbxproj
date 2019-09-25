@@ -19,9 +19,13 @@
 		70C9957C233B6AFB003F7058 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9957B233B6AFB003F7058 /* Extensions.swift */; };
 		70C9957F233B6B13003F7058 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9957E233B6B13003F7058 /* Strings.swift */; };
 		70C99581233B6B1F003F7058 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99580233B6B1F003F7058 /* Utility.swift */; };
+		70C99584233B6EFA003F7058 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99583233B6EFA003F7058 /* APIManager.swift */; };
+		948216777D451744E4C0FE2E /* Pods_HeadyMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FD90940E8DAD479C65E8352 /* Pods-HeadyMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadyMovies.debug.xcconfig"; path = "Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies.debug.xcconfig"; sourceTree = "<group>"; };
+		46BB2B04760BFD488DB171C9 /* Pods-HeadyMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadyMovies.release.xcconfig"; path = "Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies.release.xcconfig"; sourceTree = "<group>"; };
 		70C99558233B6810003F7058 /* HeadyMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C9955B233B6810003F7058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70C9955D233B6810003F7058 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +40,8 @@
 		70C9957B233B6AFB003F7058 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		70C9957E233B6B13003F7058 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		70C99580233B6B1F003F7058 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		70C99583233B6EFA003F7058 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeadyMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,18 +49,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				948216777D451744E4C0FE2E /* Pods_HeadyMovies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AF078707A5B96B62E35CA9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C4599BB38F43A3CB2542F07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FD90940E8DAD479C65E8352 /* Pods-HeadyMovies.debug.xcconfig */,
+				46BB2B04760BFD488DB171C9 /* Pods-HeadyMovies.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		70C9954F233B6810003F7058 = {
 			isa = PBXGroup;
 			children = (
 				70C9956F233B68A8003F7058 /* README.md */,
 				70C9955A233B6810003F7058 /* HeadyMovies */,
 				70C99559233B6810003F7058 /* Products */,
+				5C4599BB38F43A3CB2542F07 /* Pods */,
+				5AF078707A5B96B62E35CA9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +144,7 @@
 		70C99575233B6A68003F7058 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				70C99582233B6EDA003F7058 /* API */,
 				70C99579233B6AEC003F7058 /* Constants.swift */,
 				70C9957B233B6AFB003F7058 /* Extensions.swift */,
 				70C9957E233B6B13003F7058 /* Strings.swift */,
@@ -133,6 +161,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		70C99582233B6EDA003F7058 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				70C99583233B6EFA003F7058 /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70C9956C233B6813003F7058 /* Build configuration list for PBXNativeTarget "HeadyMovies" */;
 			buildPhases = (
+				2B45EA4B38E35B285CE829BA /* [CP] Check Pods Manifest.lock */,
 				70C99554233B6810003F7058 /* Sources */,
 				70C99555233B6810003F7058 /* Frameworks */,
 				70C99556233B6810003F7058 /* Resources */,
+				AA55352BA7CC2F088648E897 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -200,6 +238,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B45EA4B38E35B285CE829BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HeadyMovies-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA55352BA7CC2F088648E897 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		70C99554233B6810003F7058 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -208,6 +295,7 @@
 				70C9957A233B6AEC003F7058 /* Constants.swift in Sources */,
 				70C9957C233B6AFB003F7058 /* Extensions.swift in Sources */,
 				70C99560233B6810003F7058 /* MoviesViewController.swift in Sources */,
+				70C99584233B6EFA003F7058 /* APIManager.swift in Sources */,
 				70C9955C233B6810003F7058 /* AppDelegate.swift in Sources */,
 				70C99581233B6B1F003F7058 /* Utility.swift in Sources */,
 				70C9955E233B6810003F7058 /* SceneDelegate.swift in Sources */,
@@ -354,6 +442,7 @@
 		};
 		70C9956D233B6813003F7058 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FD90940E8DAD479C65E8352 /* Pods-HeadyMovies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -371,6 +460,7 @@
 		};
 		70C9956E233B6813003F7058 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46BB2B04760BFD488DB171C9 /* Pods-HeadyMovies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

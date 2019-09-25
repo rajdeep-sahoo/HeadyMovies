@@ -8,12 +8,33 @@
 
 import UIKit
 import SystemConfiguration
+import MBProgressHUD
+import Kingfisher
 
 final class Utility {
     
     private init() {}
     
     static let shared = Utility()
+    
+    // MARK: - Local Constants
+    let window = UIApplication.shared.windows.last!
+    
+    // MARK: - MBProgressHUDs
+    func showHUDLoader() {
+        DispatchQueue.main.async(execute: {
+            let loader = MBProgressHUD.showAdded(to: self.window, animated: true)
+            loader.mode = MBProgressHUDMode.indeterminate
+        })
+    }
+    
+    
+    func hideHUDLoader() {
+        DispatchQueue.main.async(execute: {
+            MBProgressHUD.hide(for: self.window, animated: true)
+        })
+    }
+    
     
     // MARK: - UIAlerts
     func showAlert(withMessage message: String, from viewController: UIViewController) {
