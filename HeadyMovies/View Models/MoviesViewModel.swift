@@ -86,7 +86,9 @@ extension MoviesViewController {
     }
     
     func sortList(sortType: SortType) {
-        self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+        if self.movies.count > 0 {
+            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+        }
         self.movies.removeAll()
         switch sortType {
         case .Popularity:
@@ -154,7 +156,9 @@ extension MoviesViewController: UISearchBarDelegate {
         searchBar.endEditing(true)
         enableSearchBarCancelButton(searchBar: searchBar)
         if let searchedMovie = searchBar.text {
-            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+            if self.movies.count > 0 {
+                self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+            }
             self.movies.removeAll()
             searchMovie(movieName: searchedMovie)
         }

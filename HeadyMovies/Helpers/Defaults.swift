@@ -14,6 +14,8 @@ class Default {
         case sortSelected
     }
     
+    private init() {}
+    
     static let shared = Default()
     
     var sortSelected: String {
