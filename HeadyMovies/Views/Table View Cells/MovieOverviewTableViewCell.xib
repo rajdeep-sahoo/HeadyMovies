@@ -23,8 +23,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-M8-RQ1">
-                        <rect key="frame" x="15" y="13" width="290" height="282"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-M8-RQ1">
+                        <rect key="frame" x="15" y="13" width="290" height="262"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                     <constraint firstItem="QPb-M8-RQ1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="FpG-Y6-bhe"/>
                     <constraint firstItem="zg5-4f-Bt2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="J9s-nV-hWa"/>
                     <constraint firstItem="QPb-M8-RQ1" firstAttribute="top" secondItem="zg5-4f-Bt2" secondAttribute="bottom" constant="8" id="MkG-zc-qAz"/>
-                    <constraint firstAttribute="bottom" secondItem="QPb-M8-RQ1" secondAttribute="bottom" constant="10" id="OaF-Ba-xt7"/>
+                    <constraint firstAttribute="bottom" secondItem="QPb-M8-RQ1" secondAttribute="bottom" constant="30" id="OaF-Ba-xt7"/>
                     <constraint firstItem="zg5-4f-Bt2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Rzf-2v-WHx"/>
                     <constraint firstAttribute="trailing" secondItem="zg5-4f-Bt2" secondAttribute="trailing" constant="15" id="TZh-bY-sRa"/>
                     <constraint firstAttribute="trailing" secondItem="QPb-M8-RQ1" secondAttribute="trailing" constant="15" id="m0J-cE-hBX"/>

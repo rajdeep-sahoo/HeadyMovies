@@ -42,12 +42,22 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="OFe-Pd-phj"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8n-5y-E2T">
+                                <rect key="frame" x="50" y="262" width="220" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="q8n-5y-E2T" secondAttribute="trailing" constant="50" id="SHL-U2-wBw"/>
                             <constraint firstItem="hTx-XY-DeB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SR1-4a-Uvq"/>
                             <constraint firstItem="hTx-XY-DeB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UxT-SZ-IcU"/>
                             <constraint firstItem="hTx-XY-DeB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="du7-4K-aEZ"/>
+                            <constraint firstItem="q8n-5y-E2T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kd4-o7-ANu"/>
+                            <constraint firstItem="q8n-5y-E2T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vvX-eM-AaW"/>
+                            <constraint firstItem="q8n-5y-E2T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="wEY-sd-Zjf"/>
                             <constraint firstItem="hTx-XY-DeB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yxi-2K-ymz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -57,6 +67,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="hTx-XY-DeB" id="tcx-DN-O74"/>
+                        <outlet property="noMoviesFoundLbl" destination="q8n-5y-E2T" id="irC-33-1u0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

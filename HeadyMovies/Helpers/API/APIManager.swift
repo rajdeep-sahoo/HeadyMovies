@@ -29,11 +29,13 @@ final class APIManager {
         return requestWithHeaders
     }
     
-    private func fetchResponse<Decode: Decodable>(from request: URLRequest, viewController: UIViewController, responseType: Decode.Type, session: URLSession, success: @escaping (Decode) -> Void, failure: @escaping (String) -> Void) {
+    private func fetchResponse<Decode: Decodable>(from request: URLRequest, viewController: UIViewController, showLoader: Bool, responseType: Decode.Type, session: URLSession, success: @escaping (Decode) -> Void, failure: @escaping (String) -> Void) {
         
         if Utility.shared.isInternetAvailable() {
             
-            Utility.shared.showHUDLoader()
+            if showLoader {
+                Utility.shared.showHUDLoader()
+            }
             
             session.dataTask(with: request) { (data, response, error) in
                 
@@ -65,14 +67,14 @@ final class APIManager {
         }
     }
     
-    final func getRequest<Decode: Decodable>(url: String, viewController: UIViewController, for responseType: Decode.Type, success: @escaping (Decode) -> Void, failure: @escaping (String) -> Void) {
+    final func getRequest<Decode: Decodable>(url: String, viewController: UIViewController, showLoader: Bool, for responseType: Decode.Type, success: @escaping (Decode) -> Void, failure: @escaping (String) -> Void) {
         
         guard let url = URL(string: BASE_URL + url) else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request = addHeaders(to: request)
        
-        fetchResponse(from: request, viewController: viewController, responseType: responseType, session: URLSession(configuration: URLSessionConfiguration.default), success: { (response) in
+        fetchResponse(from: request, viewController: viewController, showLoader: showLoader, responseType: responseType, session: URLSession(configuration: URLSessionConfiguration.default), success: { (response) in
             success(response)
         }) { (errorMsg) in
             failure(errorMsg)

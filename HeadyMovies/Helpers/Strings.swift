@@ -13,5 +13,10 @@ let API_ERROR                                           = "Something went wrong.
 let NO_INTERNET_AVAILABLE                               = "Please check your internet and try after some time."
 
 let SEARCH_BAR_PLACEHOLDER                              = "Search movies"
-let RELEASE_ON                                          = "RELEASING ON"
+let RELEASED_ON                                         = "RELEASED ON"
 let PLOT_SYNOPSIS                                       = "PLOT SYNOPSIS"
+
+let DISCOVER_MOVIES                                     = "Discover Movies"
+let NOT_SPECIFIED                                       = "NOT SPECIFIED"
+
+let NO_MOVIES_FOUND                                     = "Oops!! \n No Movies Found :)"

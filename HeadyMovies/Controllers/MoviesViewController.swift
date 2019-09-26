@@ -12,6 +12,7 @@ class MoviesViewController: UIViewController {
     
     // MARK: - @IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noMoviesFoundLbl: UILabel!
     
     // MARK: - Local Variables
     var movies: [Movie] = [Movie]()
@@ -19,6 +20,9 @@ class MoviesViewController: UIViewController {
     var totalPages: Int = 0
     
     var sortSelected: SortType = .Popularity
+    
+    let searchBar = UISearchBar(frame: .zero)
+    var searchedMovie = ""
     
     let sortBtn = UIButton(type: .custom)
     

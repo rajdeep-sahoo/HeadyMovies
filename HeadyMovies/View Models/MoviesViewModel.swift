@@ -12,12 +12,16 @@ import UIKit
 extension MoviesViewController {
     
     func setupViews() {
+        self.noMoviesFoundLbl.textColor = UIColor(rgb: TEXT_BLACK_COLOR)
         setupCollectionView()
-        getPopularMovies()
+        getPopularMovies(shouldScrollToTop: false)
         setupNavigationBar()
     }
     
     func setupNavigationBar() {
+        
+        self.navigationItem.title = DISCOVER_MOVIES
+        
         let searchBtn = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchBtnTapped))
         searchBtn.tintColor = .black
 
@@ -37,65 +41,92 @@ extension MoviesViewController {
         collectionView?.backgroundColor = UIColor(rgb: BACKGROUND_COLOR)
     }
     
-    func getPopularMovies(page: Int = 1) {
+    func refreshCollectionView(shouldScrollToTop: Bool) {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+            if shouldScrollToTop {
+                if self.movies.count > 0 {
+                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+                    self.noMoviesFoundLbl(show: false)
+                } else {
+                    self.noMoviesFoundLbl(show: true)
+                }
+            }
+        }
+    }
+    
+    func noMoviesFoundLbl(show: Bool) {
+        DispatchQueue.main.async {
+            if show {
+                self.noMoviesFoundLbl.isHidden = false
+                self.noMoviesFoundLbl.text = NO_MOVIES_FOUND
+            } else {
+                self.noMoviesFoundLbl.isHidden = true
+            }
+        }
+    }
+    
+    func getPopularMovies(page: Int = 1, shouldScrollToTop: Bool, showLoader: Bool = true) {
         let url = "/movie/popular?api_key=\(TMDB_API_KEY)&language=en-US&page=\(page)"
-        APIManager.shared.getRequest(url: url, viewController: self, for: Movies.self, success: { (response) in
+        APIManager.shared.getRequest(url: url, viewController: self, showLoader: showLoader, for: Movies.self, success: { (response) in
             
             self.movies += response.results
             self.page = response.page
             self.totalPages = response.total_pages
             
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            self.refreshCollectionView(shouldScrollToTop: shouldScrollToTop)
         }) { (error) in
+            self.movies.removeAll()
+            self.noMoviesFoundLbl(show: true)
             Utility.shared.showAlert(withMessage: error, from: self)
         }
     }
     
-    func getHighestRatedMovies(page: Int = 1) {
+    func getHighestRatedMovies(page: Int = 1, shouldScrollToTop: Bool, showLoader: Bool = true) {
         let url = "/movie/top_rated?api_key=\(TMDB_API_KEY)&language=en-US&page=\(page)"
-        APIManager.shared.getRequest(url: url, viewController: self, for: Movies.self, success: { (response) in
+        APIManager.shared.getRequest(url: url, viewController: self, showLoader: showLoader, for: Movies.self, success: { (response) in
             
             self.movies += response.results
             self.page = response.page
             self.totalPages = response.total_pages
             
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            self.refreshCollectionView(shouldScrollToTop: shouldScrollToTop)
         }) { (error) in
+            self.movies.removeAll()
+            self.noMoviesFoundLbl(show: true)
             Utility.shared.showAlert(withMessage: error, from: self)
         }
     }
     
-    func searchMovie(movieName: String) {
-        let url = "/search/movie?api_key=\(TMDB_API_KEY)&query=" + movieName
-        APIManager.shared.getRequest(url: url, viewController: self, for: Movies.self, success: { (response) in
+    func searchMovie(page: Int = 1, movieName: String, shouldScrollToTop: Bool, showLoader: Bool = true) {
+        let url = "/search/movie?api_key=\(TMDB_API_KEY)&query=" + movieName + "&page=\(page)"
+        APIManager.shared.getRequest(url: url, viewController: self, showLoader: showLoader, for: Movies.self, success: { (response) in
             
             self.movies += response.results
             self.page = response.page
             self.totalPages = response.total_pages
             
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            self.refreshCollectionView(shouldScrollToTop: shouldScrollToTop)
         }) { (error) in
+            self.movies.removeAll()
+            self.noMoviesFoundLbl(show: true)
             Utility.shared.showAlert(withMessage: error, from: self)
         }
     }
     
     func sortList(sortType: SortType) {
-        if self.movies.count > 0 {
-            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
-        }
         self.movies.removeAll()
         switch sortType {
         case .Popularity:
-            getPopularMovies()
+            getPopularMovies(shouldScrollToTop: true)
         case .HighestRated:
-            getHighestRatedMovies()
+            getHighestRatedMovies(shouldScrollToTop: true)
         }
+    }
+    
+    func removeSearchBar() {
+        searchBar.resignFirstResponder()
+        refreshAfterSearch()
     }
     
     @objc func sortBtnTapped() {
@@ -110,8 +141,6 @@ extension MoviesViewController {
 extension MoviesViewController: UISearchBarDelegate {
     
     @objc func searchBtnTapped() {
-        
-        let searchBar = UISearchBar(frame: .zero)
         searchBar.showsCancelButton = true
         searchBar.delegate = self
         
@@ -122,6 +151,7 @@ extension MoviesViewController: UISearchBarDelegate {
         let searchBarPlaceholder = searchBarText!.value(forKey: "placeholderLabel") as? UILabel
         searchBarPlaceholder?.textColor = UIColor(rgb: TEXT_GRAY_COLOR)
         
+        searchBar.text = ""
         searchBar.placeholder = SEARCH_BAR_PLACEHOLDER
         
         let attributes = [NSAttributedString.Key.foregroundColor : UIColor(rgb: TEXT_BLACK_COLOR)]
@@ -135,9 +165,7 @@ extension MoviesViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        
-        refreshAfterSearch()
+        removeSearchBar()
     }
     
     func enableSearchBarCancelButton(searchBar : UISearchBar) {
@@ -156,11 +184,9 @@ extension MoviesViewController: UISearchBarDelegate {
         searchBar.endEditing(true)
         enableSearchBarCancelButton(searchBar: searchBar)
         if let searchedMovie = searchBar.text {
-            if self.movies.count > 0 {
-                self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
-            }
             self.movies.removeAll()
-            searchMovie(movieName: searchedMovie)
+            self.searchedMovie = searchedMovie
+            searchMovie(movieName: searchedMovie, shouldScrollToTop: true)
         }
         
     }
@@ -170,8 +196,14 @@ extension MoviesViewController: UISearchBarDelegate {
         setupNavigationBar()
         
         self.movies.removeAll()
+        self.searchedMovie = ""
         
-        getPopularMovies()
+        if sortSelected == .Popularity {
+            getPopularMovies(shouldScrollToTop: true)
+        } else {
+            getHighestRatedMovies(shouldScrollToTop: true)
+        }
+        
     }
     
     
@@ -186,7 +218,10 @@ extension MoviesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! MovieCollectionViewCell
-        cell.movieTitleLabel.text = self.movies[indexPath.item].title
+        
+        if let title = self.movies[indexPath.item].title {
+            cell.movieTitleLabel.text = title
+        }
         
         if let posterPath = self.movies[indexPath.item].posterPath {
             Utility.shared.setImage(from: IMAGE_BASE_URL + posterPath, on: cell.moviePosterImageView)
@@ -205,7 +240,15 @@ extension MoviesViewController: UICollectionViewDataSource {
 extension MoviesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.item + 1 == self.movies.count && self.page < self.totalPages {
-            getPopularMovies(page: self.page + 1)
+            
+            if searchedMovie != "" {
+                searchMovie(page: self.page + 1, movieName: searchedMovie, shouldScrollToTop: false, showLoader: false)
+            } else if sortSelected == .Popularity {
+                getPopularMovies(page: self.page + 1, shouldScrollToTop: false, showLoader: false)
+            } else {
+                getHighestRatedMovies(page: self.page + 1, shouldScrollToTop: false, showLoader: false)
+            }
+            
         }
     }
     
@@ -238,6 +281,7 @@ extension MoviesViewController: SortOptionDelegate {
 extension MoviesViewController {
     
     func pushToMovieInfoVC(movie: Movie) {
+        removeSearchBar()
         DispatchQueue.main.async {
             let storyboard: UIStoryboard = UIStoryboard(name: MAIN_STORYBOARD, bundle: nil)
             let movieInfoVC = storyboard.instantiateViewController(withIdentifier: "MovieInfoViewController") as! MovieInfoViewController

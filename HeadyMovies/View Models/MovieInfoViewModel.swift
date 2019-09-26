@@ -38,7 +38,11 @@ extension MovieInfoViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTitleTableViewCell", for: indexPath) as! MovieTitleTableViewCell
-            cell.movieTitleLbl.text = movie.originalTitle
+            
+            if let originalTitle = movie.originalTitle {
+                cell.movieTitleLbl.text = originalTitle
+            }
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MoviePosterTableViewCell", for: indexPath) as! MoviePosterTableViewCell
@@ -51,7 +55,13 @@ extension MovieInfoViewController: UITableViewDataSource {
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MovieRatingReleaseDateTableViewCell", for: indexPath) as! MovieRatingReleaseDateTableViewCell
             
-            cell.movieRatingLbl.text = "\(movie.voteAverage)"
+            if let rating = movie.voteAverage {
+                cell.ratingContainerView.isHidden = false
+                cell.movieRatingLbl.text = "\(rating)"
+            } else {
+                cell.ratingContainerView.isHidden = true
+            }
+            
             
             let dateFormatterGet = DateFormatter()
             dateFormatterGet.dateFormat = "yyyy-mm-dd"
@@ -59,14 +69,20 @@ extension MovieInfoViewController: UITableViewDataSource {
             let dateFormatterPut = DateFormatter()
             dateFormatterPut.dateFormat = "MMM d, yyyy"
             
-            if let date = dateFormatterGet.date(from: movie.releaseDate) {
+            if let releaseDate = movie.releaseDate, let date = dateFormatterGet.date(from: releaseDate) {
                 cell.movieReleaseDateLbl.text = dateFormatterPut.string(from: date)
+            } else {
+                cell.movieReleaseDateLbl.text = NOT_SPECIFIED
             }
             
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MovieOverviewTableViewCell", for: indexPath) as! MovieOverviewTableViewCell
-            cell.movieOverviewLbl.text = movie.overview
+            
+            if let overview = movie.overview {
+                cell.movieOverviewLbl.text = overview
+            }
+            
             return cell
         default:
             break

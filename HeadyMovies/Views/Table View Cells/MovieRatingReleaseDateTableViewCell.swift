@@ -29,13 +29,13 @@ extension MovieRatingReleaseDateTableViewCell {
     
     func setupCell() {
         ratingContainerView.layer.cornerRadius = ratingContainerView.frame.size.height / 2
-        ratingContainerView.layer.borderWidth = 2
+        ratingContainerView.layer.borderWidth = 3
         ratingContainerView.layer.borderColor = UIColor(rgb: GREEN_COLOR).cgColor
         
         releaseDateContainerView.layer.cornerRadius = 3
         
         releaseDateLbl.textColor = UIColor(rgb: TEXT_BLACK_COLOR)
-        releaseDateLbl.text = RELEASE_ON
+        releaseDateLbl.text = RELEASED_ON
     }
     
 }
