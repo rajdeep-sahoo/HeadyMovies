@@ -70,13 +70,31 @@
                     <view key="view" contentMode="scaleToFill" id="XaG-Py-8Tf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-en-Mk7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VCs-yo-VDf" id="C7D-6C-31l"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Mrf-en-Mk7" firstAttribute="top" secondItem="t1j-K2-MYo" secondAttribute="top" id="G1l-uM-ssW"/>
+                            <constraint firstItem="Mrf-en-Mk7" firstAttribute="bottom" secondItem="t1j-K2-MYo" secondAttribute="bottom" id="KfV-dv-j1A"/>
+                            <constraint firstItem="Mrf-en-Mk7" firstAttribute="leading" secondItem="t1j-K2-MYo" secondAttribute="leading" id="foZ-Jc-d9i"/>
+                            <constraint firstItem="Mrf-en-Mk7" firstAttribute="trailing" secondItem="t1j-K2-MYo" secondAttribute="trailing" id="r9w-is-uPM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="t1j-K2-MYo"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Mrf-en-Mk7" id="Kcz-6M-sfy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UG0-mB-EeX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="70"/>
+            <point key="canvasLocation" x="1845" y="69.718309859154928"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T8N-Rq-7zZ">

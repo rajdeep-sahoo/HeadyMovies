@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieOverviewTableViewCell" rowHeight="305" id="KGk-i7-Jjw" customClass="MovieOverviewTableViewCell" customModule="HeadyMovies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="305"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="305"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg5-4f-Bt2">
+                        <rect key="frame" x="15" y="5" width="290" height="0.0"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-M8-RQ1">
+                        <rect key="frame" x="15" y="13" width="290" height="282"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QPb-M8-RQ1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="FpG-Y6-bhe"/>
+                    <constraint firstItem="zg5-4f-Bt2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="J9s-nV-hWa"/>
+                    <constraint firstItem="QPb-M8-RQ1" firstAttribute="top" secondItem="zg5-4f-Bt2" secondAttribute="bottom" constant="8" id="MkG-zc-qAz"/>
+                    <constraint firstAttribute="bottom" secondItem="QPb-M8-RQ1" secondAttribute="bottom" constant="10" id="OaF-Ba-xt7"/>
+                    <constraint firstItem="zg5-4f-Bt2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Rzf-2v-WHx"/>
+                    <constraint firstAttribute="trailing" secondItem="zg5-4f-Bt2" secondAttribute="trailing" constant="15" id="TZh-bY-sRa"/>
+                    <constraint firstAttribute="trailing" secondItem="QPb-M8-RQ1" secondAttribute="trailing" constant="15" id="m0J-cE-hBX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="movieOverviewLbl" destination="QPb-M8-RQ1" id="jvr-se-FHb"/>
+                <outlet property="plotSynopsisLbl" destination="zg5-4f-Bt2" id="Q3V-IA-nRg"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="212.61160714285714"/>
+        </tableViewCell>
+    </objects>
+</document>

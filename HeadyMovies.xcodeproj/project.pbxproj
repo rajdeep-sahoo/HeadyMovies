@@ -28,6 +28,14 @@
 		70C99595233C8121003F7058 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99594233C8120003F7058 /* Defaults.swift */; };
 		70C99597233C8D78003F7058 /* MovieInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99596233C8D78003F7058 /* MovieInfoViewController.swift */; };
 		70C99599233C8DAD003F7058 /* MovieInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99598233C8DAD003F7058 /* MovieInfoViewModel.swift */; };
+		70C9959D233C92B3003F7058 /* MovieTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9959B233C92B3003F7058 /* MovieTitleTableViewCell.swift */; };
+		70C9959E233C92B3003F7058 /* MovieTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C9959C233C92B3003F7058 /* MovieTitleTableViewCell.xib */; };
+		70C995A1233C92E0003F7058 /* MoviePosterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9959F233C92E0003F7058 /* MoviePosterTableViewCell.swift */; };
+		70C995A2233C92E0003F7058 /* MoviePosterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C995A0233C92E0003F7058 /* MoviePosterTableViewCell.xib */; };
+		70C995A5233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C995A3233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.swift */; };
+		70C995A6233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C995A4233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.xib */; };
+		70C995A9233C9389003F7058 /* MovieOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C995A7233C9389003F7058 /* MovieOverviewTableViewCell.swift */; };
+		70C995AA233C9389003F7058 /* MovieOverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C995A8233C9389003F7058 /* MovieOverviewTableViewCell.xib */; };
 		948216777D451744E4C0FE2E /* Pods_HeadyMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +65,14 @@
 		70C99594233C8120003F7058 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		70C99596233C8D78003F7058 /* MovieInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoViewController.swift; sourceTree = "<group>"; };
 		70C99598233C8DAD003F7058 /* MovieInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoViewModel.swift; sourceTree = "<group>"; };
+		70C9959B233C92B3003F7058 /* MovieTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTitleTableViewCell.swift; sourceTree = "<group>"; };
+		70C9959C233C92B3003F7058 /* MovieTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTitleTableViewCell.xib; sourceTree = "<group>"; };
+		70C9959F233C92E0003F7058 /* MoviePosterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePosterTableViewCell.swift; sourceTree = "<group>"; };
+		70C995A0233C92E0003F7058 /* MoviePosterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviePosterTableViewCell.xib; sourceTree = "<group>"; };
+		70C995A3233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRatingReleaseDateTableViewCell.swift; sourceTree = "<group>"; };
+		70C995A4233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieRatingReleaseDateTableViewCell.xib; sourceTree = "<group>"; };
+		70C995A7233C9389003F7058 /* MovieOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		70C995A8233C9389003F7058 /* MovieOverviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieOverviewTableViewCell.xib; sourceTree = "<group>"; };
 		A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeadyMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				70C9958B233B9CFD003F7058 /* Collection View Cells */,
+				70C9959A233C9140003F7058 /* Table View Cells */,
 				70C99566233B6813003F7058 /* LaunchScreen.storyboard */,
 				70C99561233B6810003F7058 /* Main.storyboard */,
 			);
@@ -200,6 +217,21 @@
 			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
+		70C9959A233C9140003F7058 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				70C9959B233C92B3003F7058 /* MovieTitleTableViewCell.swift */,
+				70C9959C233C92B3003F7058 /* MovieTitleTableViewCell.xib */,
+				70C9959F233C92E0003F7058 /* MoviePosterTableViewCell.swift */,
+				70C995A0233C92E0003F7058 /* MoviePosterTableViewCell.xib */,
+				70C995A3233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.swift */,
+				70C995A4233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.xib */,
+				70C995A7233C9389003F7058 /* MovieOverviewTableViewCell.swift */,
+				70C995A8233C9389003F7058 /* MovieOverviewTableViewCell.xib */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,10 +293,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				70C9958F233B9D5C003F7058 /* MovieCollectionViewCell.xib in Resources */,
+				70C9959E233C92B3003F7058 /* MovieTitleTableViewCell.xib in Resources */,
 				70C99568233B6813003F7058 /* LaunchScreen.storyboard in Resources */,
 				70C99565233B6813003F7058 /* Assets.xcassets in Resources */,
 				70C99570233B68A8003F7058 /* README.md in Resources */,
+				70C995A2233C92E0003F7058 /* MoviePosterTableViewCell.xib in Resources */,
 				70C99563233B6810003F7058 /* Main.storyboard in Resources */,
+				70C995AA233C9389003F7058 /* MovieOverviewTableViewCell.xib in Resources */,
+				70C995A6233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,13 +370,17 @@
 				70C99560233B6810003F7058 /* MoviesViewController.swift in Sources */,
 				70C99593233C7B41003F7058 /* Enumerators.swift in Sources */,
 				70C99584233B6EFA003F7058 /* APIManager.swift in Sources */,
+				70C995A5233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.swift in Sources */,
 				70C9955C233B6810003F7058 /* AppDelegate.swift in Sources */,
+				70C9959D233C92B3003F7058 /* MovieTitleTableViewCell.swift in Sources */,
 				70C99581233B6B1F003F7058 /* Utility.swift in Sources */,
 				70C9955E233B6810003F7058 /* SceneDelegate.swift in Sources */,
 				70C99599233C8DAD003F7058 /* MovieInfoViewModel.swift in Sources */,
 				70C99597233C8D78003F7058 /* MovieInfoViewController.swift in Sources */,
 				70C9958E233B9D5C003F7058 /* MovieCollectionViewCell.swift in Sources */,
+				70C995A1233C92E0003F7058 /* MoviePosterTableViewCell.swift in Sources */,
 				70C99578233B6AC4003F7058 /* MoviesViewModel.swift in Sources */,
+				70C995A9233C9389003F7058 /* MovieOverviewTableViewCell.swift in Sources */,
 				70C9957F233B6B13003F7058 /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

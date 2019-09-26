@@ -10,6 +10,9 @@ import UIKit
 
 class MovieInfoViewController: UIViewController {
     
+    // MARK: - @IBOutlets
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Local Variables
     var movie: Movie!
     
