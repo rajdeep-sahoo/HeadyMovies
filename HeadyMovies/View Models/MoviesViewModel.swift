@@ -217,7 +217,6 @@ extension MoviesViewController: UISearchBarDelegate {
     
     func setupAfterSearch() {
         refreshNavigationBar()
-        hitApiBasedOnSort(shouldScrollToTop: false)
     }
     
     
