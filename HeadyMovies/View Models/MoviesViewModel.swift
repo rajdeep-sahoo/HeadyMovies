@@ -21,23 +21,15 @@ extension MoviesViewController {
         let searchBtn = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchBtnTapped))
         searchBtn.tintColor = .black
 
-        let sortBtn: UIBarButtonItem = {
-            
-            let button = UIButton(type: .custom)
-            button.setImage(UIImage(named: "sort_icon"), for: .normal)
-            button.contentMode = .scaleAspectFit
-            button.addTarget(self, action: #selector(sortBtnTapped), for: .touchUpInside)
-            button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-            button.widthAnchor.constraint(equalToConstant: 20).isActive = true
-            button.heightAnchor.constraint(equalToConstant: 20).isActive = true
-            
-            let tabItem = UIBarButtonItem(customView: button)
-            return tabItem
-            
-        }()
+        sortBtn.setImage(UIImage(named: "sort_icon"), for: .normal)
+        sortBtn.contentMode = .scaleAspectFit
+        sortBtn.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        sortBtn.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        sortBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        sortBtn.addTarget(self, action: #selector(sortBtnTapped), for: .touchUpInside)
         
         self.navigationController?.navigationBar.topItem?.leftBarButtonItem = searchBtn
-        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = sortBtn
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(customView: sortBtn)
     }
     
     func setupCollectionView() {
@@ -47,6 +39,22 @@ extension MoviesViewController {
     
     func getPopularMovies(page: Int = 1) {
         let url = "/movie/popular?api_key=\(TMDB_API_KEY)&language=en-US&page=\(page)"
+        APIManager.shared.getRequest(url: url, viewController: self, for: Movies.self, success: { (response) in
+            
+            self.movies += response.results
+            self.page = response.page
+            self.totalPages = response.total_pages
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }) { (error) in
+            Utility.shared.showAlert(withMessage: error, from: self)
+        }
+    }
+    
+    func getHighestRatedMovies(page: Int = 1) {
+        let url = "/movie/top_rated?api_key=\(TMDB_API_KEY)&language=en-US&page=\(page)"
         APIManager.shared.getRequest(url: url, viewController: self, for: Movies.self, success: { (response) in
             
             self.movies += response.results
@@ -77,8 +85,20 @@ extension MoviesViewController {
         }
     }
     
+    func sortList(sortType: SortType) {
+        self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+        self.movies.removeAll()
+        switch sortType {
+        case .Popularity:
+            getPopularMovies()
+        case .HighestRated:
+            getHighestRatedMovies()
+        }
+    }
+    
     @objc func sortBtnTapped() {
-        print("Lorem Ipsum")
+        Utility.shared.sortDelegate = self
+        Utility.shared.dropDown(on: UIBarButtonItem(customView: sortBtn), from: self)
     }
     
 }
@@ -193,4 +213,15 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
         let width = Utility.shared.moviewGridPosterWidth
         return CGSize(width: width, height: width * 1.5)
     }
+}
+
+
+// MARK: - Custom Delegate
+extension MoviesViewController: SortOptionDelegate {
+    
+    func sortOptionSelected(type: SortType) {
+        sortSelected = type
+        sortList(sortType: sortSelected)
+    }
+    
 }

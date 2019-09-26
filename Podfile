@@ -8,5 +8,6 @@ target 'HeadyMovies' do
   # Pods for HeadyMovies
   pod 'MBProgressHUD'
   pod 'Kingfisher'
+  pod 'DropDown'
 
 end

@@ -10,6 +10,7 @@ import UIKit
 import SystemConfiguration
 import MBProgressHUD
 import Kingfisher
+import DropDown
 
 final class Utility {
     
@@ -20,6 +21,44 @@ final class Utility {
     // MARK: - Local Constants
     let window = UIApplication.shared.windows.last!
     let moviewGridPosterWidth = (UIScreen.main.bounds.size.width - 30) / 2
+    var sortDelegate: SortOptionDelegate?
+    
+    // MARK: - Drop Down Helper
+    func dropDownUI() -> DropDown {
+        let dropDown = DropDown()
+        dropDown.cellHeight = 40
+        dropDown.textColor = UIColor(rgb: TEXT_BLACK_COLOR)
+        dropDown.backgroundColor = UIColor(rgb: BACKGROUND_COLOR)
+        return dropDown
+    }
+    
+    func dropDown(on view: UIBarButtonItem, from viewController: UIViewController) {
+        let dropDown = dropDownUI()
+        let leftPadding = "  "
+        dropDown.anchorView = view
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)! + 2)
+        dropDown.width = 130
+        
+        dropDown.dataSource = [leftPadding + SortType.Popularity.rawValue, leftPadding + SortType.HighestRated.rawValue]
+        
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            switch item.trimmingCharacters(in: .whitespaces) {
+                
+            case SortType.Popularity.rawValue:
+                self.sortDelegate?.sortOptionSelected(type: .Popularity)
+                
+            case SortType.HighestRated.rawValue:
+                self.sortDelegate?.sortOptionSelected(type: .HighestRated)
+                
+                
+            default:
+                break
+            }
+        }
+        
+        dropDown.show()
+    }
+    
     
     // MARK: - MBProgressHUDs
     func showHUDLoader() {

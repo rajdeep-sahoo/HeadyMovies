@@ -18,6 +18,10 @@ class MoviesViewController: UIViewController {
     var page: Int = 0
     var totalPages: Int = 0
     
+    var sortSelected: SortType = .Popularity
+    
+    let sortBtn = UIButton(type: .custom)
+    
     let reuseId = "MovieCollectionViewCell"
     
     // MARK: - Life Cycle Methods

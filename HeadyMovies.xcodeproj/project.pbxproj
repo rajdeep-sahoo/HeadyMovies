@@ -23,6 +23,9 @@
 		70C99588233B808B003F7058 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99587233B808B003F7058 /* Movie.swift */; };
 		70C9958E233B9D5C003F7058 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9958C233B9D5C003F7058 /* MovieCollectionViewCell.swift */; };
 		70C9958F233B9D5C003F7058 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C9958D233B9D5C003F7058 /* MovieCollectionViewCell.xib */; };
+		70C99591233C7A04003F7058 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99590233C7A04003F7058 /* Protocols.swift */; };
+		70C99593233C7B41003F7058 /* Enumerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99592233C7B41003F7058 /* Enumerators.swift */; };
+		70C99595233C8121003F7058 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99594233C8120003F7058 /* Defaults.swift */; };
 		948216777D451744E4C0FE2E /* Pods_HeadyMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		70C99587233B808B003F7058 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		70C9958C233B9D5C003F7058 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		70C9958D233B9D5C003F7058 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		70C99590233C7A04003F7058 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		70C99592233C7B41003F7058 /* Enumerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerators.swift; sourceTree = "<group>"; };
+		70C99594233C8120003F7058 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeadyMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,7 +159,10 @@
 			children = (
 				70C99582233B6EDA003F7058 /* API */,
 				70C99579233B6AEC003F7058 /* Constants.swift */,
+				70C99594233C8120003F7058 /* Defaults.swift */,
+				70C99592233C7B41003F7058 /* Enumerators.swift */,
 				70C9957B233B6AFB003F7058 /* Extensions.swift */,
+				70C99590233C7A04003F7058 /* Protocols.swift */,
 				70C9957E233B6B13003F7058 /* Strings.swift */,
 				70C99580233B6B1F003F7058 /* Utility.swift */,
 			);
@@ -287,6 +296,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 			);
@@ -294,6 +304,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 			);
@@ -310,9 +321,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				70C9957A233B6AEC003F7058 /* Constants.swift in Sources */,
+				70C99595233C8121003F7058 /* Defaults.swift in Sources */,
 				70C99588233B808B003F7058 /* Movie.swift in Sources */,
 				70C9957C233B6AFB003F7058 /* Extensions.swift in Sources */,
+				70C99591233C7A04003F7058 /* Protocols.swift in Sources */,
 				70C99560233B6810003F7058 /* MoviesViewController.swift in Sources */,
+				70C99593233C7B41003F7058 /* Enumerators.swift in Sources */,
 				70C99584233B6EFA003F7058 /* APIManager.swift in Sources */,
 				70C9955C233B6810003F7058 /* AppDelegate.swift in Sources */,
 				70C99581233B6B1F003F7058 /* Utility.swift in Sources */,
