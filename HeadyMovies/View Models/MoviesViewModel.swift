@@ -124,9 +124,14 @@ extension MoviesViewController {
         }
     }
     
-    func removeSearchBar(shouldScrollToTop: Bool) {
+    func removeSearchBar() {
         searchBar.resignFirstResponder()
-        refreshAfterSearch(shouldScrollToTop: shouldScrollToTop)
+        refreshAfterSearch()
+    }
+    
+    func setupSearchBar() {
+        searchBar.resignFirstResponder()
+        setupAfterSearch()
     }
     
     @objc func sortBtnTapped() {
@@ -151,7 +156,7 @@ extension MoviesViewController: UISearchBarDelegate {
         let searchBarPlaceholder = searchBarText!.value(forKey: "placeholderLabel") as? UILabel
         searchBarPlaceholder?.textColor = UIColor(rgb: TEXT_GRAY_COLOR)
         
-        searchBar.text = ""
+        searchBar.text = self.searchedMovie
         searchBar.placeholder = SEARCH_BAR_PLACEHOLDER
         
         let attributes = [NSAttributedString.Key.foregroundColor : UIColor(rgb: TEXT_BLACK_COLOR)]
@@ -165,7 +170,7 @@ extension MoviesViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        removeSearchBar(shouldScrollToTop: true)
+        removeSearchBar()
     }
     
     func enableSearchBarCancelButton(searchBar : UISearchBar) {
@@ -188,22 +193,31 @@ extension MoviesViewController: UISearchBarDelegate {
             self.searchedMovie = searchedMovie
             searchMovie(movieName: searchedMovie, shouldScrollToTop: true)
         }
-        
     }
     
-    func refreshAfterSearch(shouldScrollToTop: Bool) {
+    func refreshNavigationBar() {
         self.navigationItem.titleView = nil
         setupNavigationBar()
-        
-        self.movies.removeAll()
-        self.searchedMovie = ""
-        
+    }
+    
+    func hitApiBasedOnSort(shouldScrollToTop: Bool) {
         if sortSelected == .Popularity {
             getPopularMovies(shouldScrollToTop: shouldScrollToTop)
         } else {
             getHighestRatedMovies(shouldScrollToTop: shouldScrollToTop)
         }
-        
+    }
+    
+    func refreshAfterSearch() {
+        refreshNavigationBar()
+        self.movies.removeAll()
+        self.searchedMovie = ""
+        hitApiBasedOnSort(shouldScrollToTop: true)
+    }
+    
+    func setupAfterSearch() {
+        refreshNavigationBar()
+        hitApiBasedOnSort(shouldScrollToTop: false)
     }
     
     
@@ -281,7 +295,7 @@ extension MoviesViewController: SortOptionDelegate {
 extension MoviesViewController {
     
     func pushToMovieInfoVC(movie: Movie) {
-        removeSearchBar(shouldScrollToTop: false)
+        setupSearchBar()
         DispatchQueue.main.async {
             let storyboard: UIStoryboard = UIStoryboard(name: MAIN_STORYBOARD, bundle: nil)
             let movieInfoVC = storyboard.instantiateViewController(withIdentifier: "MovieInfoViewController") as! MovieInfoViewController
