@@ -26,6 +26,8 @@
 		70C99591233C7A04003F7058 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99590233C7A04003F7058 /* Protocols.swift */; };
 		70C99593233C7B41003F7058 /* Enumerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99592233C7B41003F7058 /* Enumerators.swift */; };
 		70C99595233C8121003F7058 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99594233C8120003F7058 /* Defaults.swift */; };
+		70C99597233C8D78003F7058 /* MovieInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99596233C8D78003F7058 /* MovieInfoViewController.swift */; };
+		70C99599233C8DAD003F7058 /* MovieInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C99598233C8DAD003F7058 /* MovieInfoViewModel.swift */; };
 		948216777D451744E4C0FE2E /* Pods_HeadyMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		70C99590233C7A04003F7058 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		70C99592233C7B41003F7058 /* Enumerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerators.swift; sourceTree = "<group>"; };
 		70C99594233C8120003F7058 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		70C99596233C8D78003F7058 /* MovieInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoViewController.swift; sourceTree = "<group>"; };
+		70C99598233C8DAD003F7058 /* MovieInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoViewModel.swift; sourceTree = "<group>"; };
 		A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeadyMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +137,7 @@
 		70C99572233B6A46003F7058 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				70C99598233C8DAD003F7058 /* MovieInfoViewModel.swift */,
 				70C99577233B6AC4003F7058 /* MoviesViewModel.swift */,
 			);
 			path = "View Models";
@@ -172,6 +177,7 @@
 		70C99576233B6A70003F7058 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				70C99596233C8D78003F7058 /* MovieInfoViewController.swift */,
 				70C9955F233B6810003F7058 /* MoviesViewController.swift */,
 			);
 			path = Controllers;
@@ -331,6 +337,8 @@
 				70C9955C233B6810003F7058 /* AppDelegate.swift in Sources */,
 				70C99581233B6B1F003F7058 /* Utility.swift in Sources */,
 				70C9955E233B6810003F7058 /* SceneDelegate.swift in Sources */,
+				70C99599233C8DAD003F7058 /* MovieInfoViewModel.swift in Sources */,
+				70C99597233C8D78003F7058 /* MovieInfoViewController.swift in Sources */,
 				70C9958E233B9D5C003F7058 /* MovieCollectionViewCell.swift in Sources */,
 				70C99578233B6AC4003F7058 /* MoviesViewModel.swift in Sources */,
 				70C9957F233B6B13003F7058 /* Strings.swift in Sources */,

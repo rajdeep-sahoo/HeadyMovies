@@ -208,6 +208,10 @@ extension MoviesViewController: UICollectionViewDelegate {
             getPopularMovies(page: self.page + 1)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        pushToMovieInfoVC(movie: self.movies[indexPath.item])
+    }
 }
 
 
@@ -229,3 +233,23 @@ extension MoviesViewController: SortOptionDelegate {
     }
     
 }
+
+// MARK: - Routes
+extension MoviesViewController {
+    
+    func pushToMovieInfoVC(movie: Movie) {
+        DispatchQueue.main.async {
+            let storyboard: UIStoryboard = UIStoryboard(name: MAIN_STORYBOARD, bundle: nil)
+            let movieInfoVC = storyboard.instantiateViewController(withIdentifier: "MovieInfoViewController") as! MovieInfoViewController
+            movieInfoVC.movie = movie
+            self.navigationController?.pushViewController(movieInfoVC, animated: true)
+        }
+    }
+    
+}
+
+
+
+
+
+
