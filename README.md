@@ -3,7 +3,6 @@
 A simple application that lets you discover movies. You can sort the movies by Highest Rated or Popularity. Also, you can check their detailed information like Rating, Plot Synopsis, Release Date etc.
 
 
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
