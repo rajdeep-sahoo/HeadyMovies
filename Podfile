@@ -9,5 +9,6 @@ target 'HeadyMovies' do
   pod 'MBProgressHUD'
   pod 'Kingfisher'
   pod 'DropDown'
+  pod 'AgoraRtcEngine_iOS'
 
 end

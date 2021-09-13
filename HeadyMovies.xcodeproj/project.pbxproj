@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		558D8AF026ECC0C100D88C9B /* AgoraID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D8AEF26ECC0C100D88C9B /* AgoraID.swift */; };
+		558D8AF226ECC3A500D88C9B /* AgoraVideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D8AF126ECC3A500D88C9B /* AgoraVideoCallViewController.swift */; };
+		558D8B2826ECCCE100D88C9B /* AgoraSoundTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558D8B1826ECCCAD00D88C9B /* AgoraSoundTouch.framework */; };
+		558D8B2A26ECCCE200D88C9B /* AgoraRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558D8B1626ECCCAD00D88C9B /* AgoraRtcKit.framework */; };
+		558D8B2C26ECCCE400D88C9B /* AgoraJNDExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558D8B1526ECCCAD00D88C9B /* AgoraJNDExtension.framework */; };
+		558D8B2E26ECCCE500D88C9B /* Agoraffmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558D8B1726ECCCAD00D88C9B /* Agoraffmpeg.framework */; };
+		558D8B3026ECCCE600D88C9B /* Agorafdkaac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558D8B1A26ECCCAD00D88C9B /* Agorafdkaac.framework */; };
+		558D8B3226ECCCE700D88C9B /* AgoraDav1dExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558D8B1B26ECCCAD00D88C9B /* AgoraDav1dExtension.framework */; };
+		558D8B3426ECCCE900D88C9B /* AgoraCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558D8B1C26ECCCAD00D88C9B /* AgoraCore.framework */; };
+		558D8B3626ECCCEA00D88C9B /* AgoraAIDenoiseExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558D8B1326ECCCA100D88C9B /* AgoraAIDenoiseExtension.framework */; };
 		70C9955C233B6810003F7058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9955B233B6810003F7058 /* AppDelegate.swift */; };
 		70C9955E233B6810003F7058 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9955D233B6810003F7058 /* SceneDelegate.swift */; };
 		70C99560233B6810003F7058 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9955F233B6810003F7058 /* MoviesViewController.swift */; };
@@ -33,12 +43,22 @@
 		70C995A6233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C995A4233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.xib */; };
 		70C995A9233C9389003F7058 /* MovieOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C995A7233C9389003F7058 /* MovieOverviewTableViewCell.swift */; };
 		70C995AA233C9389003F7058 /* MovieOverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C995A8233C9389003F7058 /* MovieOverviewTableViewCell.xib */; };
-		948216777D451744E4C0FE2E /* Pods_HeadyMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */; };
+		B3D3FF6B0B4DAB0359D00544 /* Pods_HeadyMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343BA3D4FB7C60D42C1C5CDC /* Pods_HeadyMovies.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3FD90940E8DAD479C65E8352 /* Pods-HeadyMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadyMovies.debug.xcconfig"; path = "Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies.debug.xcconfig"; sourceTree = "<group>"; };
-		46BB2B04760BFD488DB171C9 /* Pods-HeadyMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadyMovies.release.xcconfig"; path = "Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies.release.xcconfig"; sourceTree = "<group>"; };
+		343BA3D4FB7C60D42C1C5CDC /* Pods_HeadyMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeadyMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		558D8AEF26ECC0C100D88C9B /* AgoraID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraID.swift; sourceTree = "<group>"; };
+		558D8AF126ECC3A500D88C9B /* AgoraVideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraVideoCallViewController.swift; sourceTree = "<group>"; };
+		558D8B1326ECCCA100D88C9B /* AgoraAIDenoiseExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraAIDenoiseExtension.framework; path = ../../Agora_Native_SDK_for_iOS_FULL/libs/AgoraAIDenoiseExtension.framework; sourceTree = "<group>"; };
+		558D8B1526ECCCAD00D88C9B /* AgoraJNDExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraJNDExtension.framework; path = ../../Agora_Native_SDK_for_iOS_FULL/libs/AgoraJNDExtension.framework; sourceTree = "<group>"; };
+		558D8B1626ECCCAD00D88C9B /* AgoraRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraRtcKit.framework; path = ../../Agora_Native_SDK_for_iOS_FULL/libs/AgoraRtcKit.framework; sourceTree = "<group>"; };
+		558D8B1726ECCCAD00D88C9B /* Agoraffmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Agoraffmpeg.framework; path = ../../Agora_Native_SDK_for_iOS_FULL/libs/Agoraffmpeg.framework; sourceTree = "<group>"; };
+		558D8B1826ECCCAD00D88C9B /* AgoraSoundTouch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraSoundTouch.framework; path = ../../Agora_Native_SDK_for_iOS_FULL/libs/AgoraSoundTouch.framework; sourceTree = "<group>"; };
+		558D8B1926ECCCAD00D88C9B /* AgoraSuperResolutionExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraSuperResolutionExtension.framework; path = ../../Agora_Native_SDK_for_iOS_FULL/libs/AgoraSuperResolutionExtension.framework; sourceTree = "<group>"; };
+		558D8B1A26ECCCAD00D88C9B /* Agorafdkaac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Agorafdkaac.framework; path = ../../Agora_Native_SDK_for_iOS_FULL/libs/Agorafdkaac.framework; sourceTree = "<group>"; };
+		558D8B1B26ECCCAD00D88C9B /* AgoraDav1dExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraDav1dExtension.framework; path = ../../Agora_Native_SDK_for_iOS_FULL/libs/AgoraDav1dExtension.framework; sourceTree = "<group>"; };
+		558D8B1C26ECCCAD00D88C9B /* AgoraCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraCore.framework; path = ../../Agora_Native_SDK_for_iOS_FULL/libs/AgoraCore.framework; sourceTree = "<group>"; };
 		70C99558233B6810003F7058 /* HeadyMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C9955B233B6810003F7058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70C9955D233B6810003F7058 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +87,8 @@
 		70C995A4233C9354003F7058 /* MovieRatingReleaseDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieRatingReleaseDateTableViewCell.xib; sourceTree = "<group>"; };
 		70C995A7233C9389003F7058 /* MovieOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		70C995A8233C9389003F7058 /* MovieOverviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieOverviewTableViewCell.xib; sourceTree = "<group>"; };
-		A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeadyMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75F3A18154A8F3683A430717 /* Pods-HeadyMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadyMovies.release.xcconfig"; path = "Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies.release.xcconfig"; sourceTree = "<group>"; };
+		8513C61AC838771A65647EB9 /* Pods-HeadyMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadyMovies.debug.xcconfig"; path = "Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +96,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				948216777D451744E4C0FE2E /* Pods_HeadyMovies.framework in Frameworks */,
+				558D8B3226ECCCE700D88C9B /* AgoraDav1dExtension.framework in Frameworks */,
+				558D8B2C26ECCCE400D88C9B /* AgoraJNDExtension.framework in Frameworks */,
+				558D8B2826ECCCE100D88C9B /* AgoraSoundTouch.framework in Frameworks */,
+				558D8B3426ECCCE900D88C9B /* AgoraCore.framework in Frameworks */,
+				558D8B3626ECCCEA00D88C9B /* AgoraAIDenoiseExtension.framework in Frameworks */,
+				558D8B2A26ECCCE200D88C9B /* AgoraRtcKit.framework in Frameworks */,
+				558D8B2E26ECCCE500D88C9B /* Agoraffmpeg.framework in Frameworks */,
+				558D8B3026ECCCE600D88C9B /* Agorafdkaac.framework in Frameworks */,
+				B3D3FF6B0B4DAB0359D00544 /* Pods_HeadyMovies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +114,16 @@
 		5AF078707A5B96B62E35CA9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A7AA00413061104304E4F7FA /* Pods_HeadyMovies.framework */,
+				558D8B1326ECCCA100D88C9B /* AgoraAIDenoiseExtension.framework */,
+				558D8B1C26ECCCAD00D88C9B /* AgoraCore.framework */,
+				558D8B1B26ECCCAD00D88C9B /* AgoraDav1dExtension.framework */,
+				558D8B1A26ECCCAD00D88C9B /* Agorafdkaac.framework */,
+				558D8B1726ECCCAD00D88C9B /* Agoraffmpeg.framework */,
+				558D8B1526ECCCAD00D88C9B /* AgoraJNDExtension.framework */,
+				558D8B1626ECCCAD00D88C9B /* AgoraRtcKit.framework */,
+				558D8B1826ECCCAD00D88C9B /* AgoraSoundTouch.framework */,
+				558D8B1926ECCCAD00D88C9B /* AgoraSuperResolutionExtension.framework */,
+				343BA3D4FB7C60D42C1C5CDC /* Pods_HeadyMovies.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -93,8 +131,8 @@
 		5C4599BB38F43A3CB2542F07 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3FD90940E8DAD479C65E8352 /* Pods-HeadyMovies.debug.xcconfig */,
-				46BB2B04760BFD488DB171C9 /* Pods-HeadyMovies.release.xcconfig */,
+				8513C61AC838771A65647EB9 /* Pods-HeadyMovies.debug.xcconfig */,
+				75F3A18154A8F3683A430717 /* Pods-HeadyMovies.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -164,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				70C99582233B6EDA003F7058 /* API */,
+				558D8AEF26ECC0C100D88C9B /* AgoraID.swift */,
 				70C99579233B6AEC003F7058 /* Constants.swift */,
 				70C99592233C7B41003F7058 /* Enumerators.swift */,
 				70C9957B233B6AFB003F7058 /* Extensions.swift */,
@@ -177,6 +216,7 @@
 		70C99576233B6A70003F7058 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				558D8AF126ECC3A500D88C9B /* AgoraVideoCallViewController.swift */,
 				70C99596233C8D78003F7058 /* MovieInfoViewController.swift */,
 				70C9955F233B6810003F7058 /* MoviesViewController.swift */,
 			);
@@ -222,11 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70C9956C233B6813003F7058 /* Build configuration list for PBXNativeTarget "HeadyMovies" */;
 			buildPhases = (
-				2B45EA4B38E35B285CE829BA /* [CP] Check Pods Manifest.lock */,
+				E009DC4FA0FC86DE684205A5 /* [CP] Check Pods Manifest.lock */,
 				70C99554233B6810003F7058 /* Sources */,
 				70C99555233B6810003F7058 /* Frameworks */,
 				70C99556233B6810003F7058 /* Resources */,
-				AA55352BA7CC2F088648E897 /* [CP] Embed Pods Frameworks */,
+				D96D58F5E109200F72E02AB6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,7 +330,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2B45EA4B38E35B285CE829BA /* [CP] Check Pods Manifest.lock */ = {
+		D96D58F5E109200F72E02AB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E009DC4FA0FC86DE684205A5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -312,32 +369,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AA55352BA7CC2F088648E897 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HeadyMovies/Pods-HeadyMovies-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -347,6 +378,7 @@
 			files = (
 				70C9957A233B6AEC003F7058 /* Constants.swift in Sources */,
 				70C99588233B808B003F7058 /* Movie.swift in Sources */,
+				558D8AF226ECC3A500D88C9B /* AgoraVideoCallViewController.swift in Sources */,
 				70C9957C233B6AFB003F7058 /* Extensions.swift in Sources */,
 				70C99591233C7A04003F7058 /* Protocols.swift in Sources */,
 				70C99560233B6810003F7058 /* MoviesViewController.swift in Sources */,
@@ -360,6 +392,7 @@
 				70C99597233C8D78003F7058 /* MovieInfoViewController.swift in Sources */,
 				70C9958E233B9D5C003F7058 /* MovieCollectionViewCell.swift in Sources */,
 				70C995A1233C92E0003F7058 /* MoviePosterTableViewCell.swift in Sources */,
+				558D8AF026ECC0C100D88C9B /* AgoraID.swift in Sources */,
 				70C995A9233C9389003F7058 /* MovieOverviewTableViewCell.swift in Sources */,
 				70C9957F233B6B13003F7058 /* Strings.swift in Sources */,
 			);
@@ -503,35 +536,42 @@
 		};
 		70C9956D233B6813003F7058 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FD90940E8DAD479C65E8352 /* Pods-HeadyMovies.debug.xcconfig */;
+			baseConfigurationReference = 8513C61AC838771A65647EB9 /* Pods-HeadyMovies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HUS2P2A7LH;
 				INFOPLIST_FILE = HeadyMovies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rajdeepsahoo.HeadyMovies;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajdeepsahoo.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64e arm64";
 			};
 			name = Debug;
 		};
 		70C9956E233B6813003F7058 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46BB2B04760BFD488DB171C9 /* Pods-HeadyMovies.release.xcconfig */;
+			baseConfigurationReference = 75F3A18154A8F3683A430717 /* Pods-HeadyMovies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HUS2P2A7LH;
 				INFOPLIST_FILE = HeadyMovies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rajdeepsahoo.HeadyMovies;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rajdeepsahoo.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

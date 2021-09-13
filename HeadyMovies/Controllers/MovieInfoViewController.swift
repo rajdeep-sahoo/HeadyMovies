@@ -79,6 +79,9 @@ extension MovieInfoViewController: UITableViewDataSource {
                 cell.ratingContainerView.isHidden = true
             }
             
+            let agoraVideoCallBtn = cell.viewWithTag(98) as! UIButton
+            agoraVideoCallBtn.addTarget(self, action: #selector(pushToVideoCall(sender:)), for: .touchUpInside)
+            
             
             let dateFormatterGet = DateFormatter()
             dateFormatterGet.dateFormat = "yyyy-mm-dd"
@@ -116,5 +119,18 @@ extension MovieInfoViewController: UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+    
+}
+
+// MARK: - Routes
+extension MovieInfoViewController {
+    
+    @objc func pushToVideoCall(sender: UIButton) {
+        DispatchQueue.main.async {
+            let storyboard: UIStoryboard = UIStoryboard(name: MAIN_STORYBOARD, bundle: nil)
+            let agoraVC = storyboard.instantiateViewController(withIdentifier: "AgoraVideoCallViewController") as! AgoraVideoCallViewController
+            self.navigationController?.pushViewController(agoraVC, animated: true)
+        }
+    }
     
 }

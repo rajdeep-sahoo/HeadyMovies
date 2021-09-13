@@ -1,6 +1,0 @@
-framework module Pods_HeadyMovies {
-  umbrella header "Pods-HeadyMovies-umbrella.h"
-
-  export *
-  module * { export * }
-}
