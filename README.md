@@ -1,6 +1,6 @@
 # Heady Movies App
 
-A simple application that lets you discover movies. You can sort the movies by Highest Rated or Popularity. Also, you can check their detailed information like Rating, Plot Synopsis, Release Date etc..
+A simple application that lets you discover movies. You can sort the movies by Highest Rated or Popularity. Also, you can check their detailed information like Rating, Plot Synopsis, Release Date etc.
 
 
 ## Getting Started
